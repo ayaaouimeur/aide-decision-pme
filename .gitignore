@@ -1,0 +1,21 @@
+# Environnements virtuels
+rag_env/
+venv/
+env/
+*.env
+
+# Dossier Chroma (base vectorielle)
+chroma_db/
+
+# Fichiers temporaires
+__pycache__/
+*.pyc
+*.pyo
+
+# Autres gros fichiers
+*.dll
+*.so
+*.pyd
+
+# Streamlit
+.streamlit/

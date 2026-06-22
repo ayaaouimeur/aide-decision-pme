@@ -1,0 +1,23 @@
+Formes Juridiques des Entreprises en Algérie
+
+- **EURL** (Entreprise Unipersonnelle à Responsabilité Limitée) :
+  Idéale pour les entrepreneurs qui démarrent seuls.
+  Avantages : Simple à créer, responsabilité limitée au capital.
+  Inconvénients : Moins crédible auprès des banques et investisseurs.
+
+- **SARL** (Société à Responsabilité Limitée) :
+  La forme la plus utilisée en Algérie.
+  Convient pour 2 à 50 associés.
+  Avantages : Bon équilibre flexibilité / crédibilité.
+  Inconvénients : Formalités un peu plus lourdes.
+
+- **SAS** (Société par Actions Simplifiée) :
+  Forme moderne et flexible.
+  Très adaptée aux startups et projets avec investisseurs.
+  Avantages : Grande liberté dans les statuts et gouvernance.
+  Inconvénients : Plus complexe à créer.
+
+- **SPA** (Société par Actions) :
+  Réservée aux grandes entreprises et projets importants.
+
+Conseil : Pour une petite entreprise ou un projet individuel, l’EURL ou la SARL sont les plus recommandées en Algérie.

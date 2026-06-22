@@ -1,0 +1,10 @@
+Comment fixer le prix de vente d'un produit ou service en Algérie
+
+Méthode recommandée :
+1. Calculer le coût de revient (matières + main d'œuvre + charges)
+2. Ajouter une marge bénéficiaire (30% à 70% selon le secteur)
+3. Analyser les prix de la concurrence
+4. Tenir compte du pouvoir d'achat des clients algériens
+5. Tester plusieurs prix et ajuster
+
+Exemple : Si coût = 800 DA, prix de vente conseillé = 1200 à 1500 DA.
