@@ -1,9 +1,0 @@
-Gestion de Trésorerie pour Petite Entreprise
-
-La trésorerie est l'argent disponible sur le compte bancaire.
-Conseils importants :
-- Suivre les entrées et sorties d'argent chaque semaine
-- Garder toujours 2 à 3 mois de charges en réserve
-- Facturer rapidement les clients
-- Négocier des délais de paiement avec fournisseurs
-- Éviter les dépenses inutiles
