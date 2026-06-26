@@ -42,7 +42,10 @@ Installer les packages
 Bashpip install -r requirements.txt
 
 Ajouter ta clé Groq
-Crée un fichier .env à la racine et mets :
+Crée un fichier `.env` à la racine du projet et mets ta clé dedans :
+
+```env
+GROQ_API_KEY=ta_clé_groq_ici
 
 
 
