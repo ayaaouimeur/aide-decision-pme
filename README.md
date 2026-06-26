@@ -44,7 +44,7 @@ Bashpip install -r requirements.txt
 Ajouter ta clé Groq
 Crée un fichier .env à la racine et mets :
 
-envGROQ_API_KEY=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
+
 
 Lancer l'application
 
