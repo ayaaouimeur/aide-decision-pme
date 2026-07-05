@@ -1,4 +1,4 @@
-# src/rag_chain.py
+# src/rag_chain.py - Version Stable et Professionnelle
 from langchain_groq import ChatGroq
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -15,21 +15,31 @@ class DecisionAidRAG:
         self.initialize()
 
     def initialize(self):
-        print("🚀 Initialisation du RAG Avancé...\n")
+        print("🚀 Initialisation du RAG Professionnel...\n")
 
+        # Chargement des documents
         loader = DirectoryLoader(DATA_PATH, glob="**/*.md", loader_cls=TextLoader, loader_kwargs={"encoding": "utf-8"})
         docs = loader.load()
         print(f"📄 {len(docs)} documents chargés.")
 
+        # Chunking Amélioré + Metadata
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=650,
-            chunk_overlap=130
+            chunk_size=700,
+            chunk_overlap=150,
+            separators=["\n\n", "\n", ".", "!", "?", " ", ""]
         )
         chunks = text_splitter.split_documents(docs)
         print(f"✅ {len(chunks)} chunks créés.")
+        
+        # Ajout de metadata pour chaque chunk
+        for chunk in chunks:
+            if 'source' not in chunk.metadata:
+                chunk.metadata['source'] = 'Document inconnu'        
 
-        embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+        # Embeddings Améliorés
+        embeddings = HuggingFaceEmbeddings(model_name="intfloat/multilingual-e5-large")
 
+        # Vector Store
         vectorstore = Chroma.from_documents(
             documents=chunks,
             embedding=embeddings,
@@ -38,19 +48,20 @@ class DecisionAidRAG:
 
         retriever = vectorstore.as_retriever(search_kwargs={"k": 6})
 
+        # LLM
         llm = ChatGroq(model=LLM_MODEL, temperature=0.25, api_key=GROQ_API_KEY)
 
-        # Prompt amélioré pour des réponses naturelles et précises
+        # Prompt Professionnel
         system_template = """
         Tu es un consultant senior très expérimenté en création et gestion de PME en Algérie.
-        Tu parles de façon naturelle, directe et professionnelle, comme si tu accompagnais un entrepreneur motivé.
+        Tu accompagnes des entrepreneurs avec un ton professionnel, clair, encourageant mais réaliste.
 
-        Règles importantes :
-        - Réponds uniquement avec les informations présentes dans le contexte.
-        - Si le contexte ne suffit pas, dis clairement : "Selon les documents dont je dispose, je n'ai pas d'information détaillée sur ce point."
+        Règles à respecter :
+        - Réponds uniquement avec les informations du contexte fourni.
+        - Si tu n'as pas assez d'informations, dis : "Selon les documents dont je dispose, je n'ai pas d'information détaillée sur ce point."
+        - Structure tes réponses avec des titres et puces.
         - Sois concret et actionnable.
-        - Structure tes réponses (titres + puces) pour qu'elles soient faciles à lire.
-        - Évite les répétitions et les phrases inutiles.
+        - Parle de façon naturelle.
         """
 
         prompt = ChatPromptTemplate.from_template("""
@@ -65,6 +76,7 @@ class DecisionAidRAG:
         def format_docs(docs):
             return "\n\n".join(doc.page_content for doc in docs)
 
+        # Chaîne RAG finale
         self.rag_chain = (
             {"context": retriever | format_docs, "question": RunnablePassthrough()}
             | prompt
@@ -72,12 +84,8 @@ class DecisionAidRAG:
             | StrOutputParser()
         )
 
-        print("✅ RAG prêt !\n")
+        print("✅ RAG Professionnel initialisé !\n")
 
     def ask(self, question: str):
-        print(f"❓ Question : {question}\n")
         response = self.rag_chain.invoke(question)
-        print("📌 Réponse :\n")
-        print(response)
-        print("\n" + "="*85 + "\n")
         return response
