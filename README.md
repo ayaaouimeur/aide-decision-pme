@@ -1,127 +1,54 @@
-# 🇩🇿 Assistant Aide à la Décision PME - Algérie
+# Assistant Aide à la Décision PME - Algérie
 
-Un **chatbot intelligent basé sur RAG (Retrieval-Augmented Generation) et des Agents IA** pour accompagner les entrepreneurs et les PME algériennes dans leurs décisions stratégiques.
-
----
-
-## 🚀 Fonctionnalités
-
-- 📌 Réponses précises sur :
-  - Création d'entreprise
-  - Financement
-  - Choix de la forme juridique
-  - Business Plan
-  - Gestion de trésorerie
-  - Marketing
-  - Fiscalité
-
-
-- 🤖 Système multi-agents spécialisés
-  - Juridique
-  - Financement
-  - Business Plan
-  - Marketing
-  - Gestion d'entreprise
-
-- 🔎 Recherche documentaire avec RAG
-
-- 💬 Interface web moderne développée avec Streamlit
-
-- ⚡ Réponses rapides grâce à Groq
+**Un chatbot intelligent basé sur RAG + Agents** pour aider les entrepreneurs et les PME en Algérie à prendre de meilleures décisions.
 
 ---
 
-## 🛠️ Technologies utilisées
+# 🚀 Présentation
 
-- LangChain
-- LangGraph
-- Groq (Llama-3.3-70B)
-- HuggingFace Embeddings
-- ChromaDB
-- Streamlit
-- Python
+Cet outil est un assistant IA spécialisé dans le contexte algérien. Il répond aux questions sur :
+
+- Création d’entreprise
+- Formes juridiques (SARL, EURL, SAS...)
+- Financement (ANSEJ, ANDI, CNAC...)
+- Business Plan
+- Gestion de trésorerie
+- Marketing et stratégie
+
+## Fonctionnalités principales
+
+- RAG avec documents structurés
+- Système d’agents spécialisés (Juridique, Financement, Business Plan...)
+- Mémoire de conversation
+- Interface web moderne
 
 ---
 
-## 📂 Structure du projet
+# 🛠️ Technologies
+
+- **LangChain + LangGraph** : Orchestration RAG et Agents
+- **Groq (Llama-3.3-70B)** : Modèle principal
+- **HuggingFace Embeddings** : Recherche sémantique
+- **Chroma** : Base vectorielle
+- **Streamlit** : Interface utilisateur
+
+---
+
+# 📁 Structure du Projet
 
 ```text
-
-## Structure du projet
 aide-decision-pme/
 ├── data/                    # Documents sources (Markdown)
 ├── src/
-    ├── agents.py 
 │   ├── config.py
-│   └── rag_chain.py
+│   ├── rag_chain.py
+│   └── agents.py
 ├── streamlit_app.py
 ├── requirements.txt
 ├── .env
 └── README.md
-
-
 ```
 
----
-
-# ⚙️ Installation
-
-## 1. Cloner le dépôt
-
-```bash
-git clone git clone https://github.com/ayaaouimeur/aide-decision-pme.git
-cd aide-decision-pme
-```
-
----
-
-## 2. Créer un environnement virtuel
-
-### Windows
-
-```bash
-python -m venv rag_env
-rag_env\Scripts\activate
-```
-
-### Linux / macOS
-
-```bash
-python3 -m venv rag_env
-source rag_env/bin/activate
-```
-
----
-
-## 3. Installer les dépendances
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 4. Configurer les variables d'environnement
-
-Créer un fichier `.env` à la racine du projet.
-
-```env
-GROQ_API_KEY=ta_cle_groq
-```
-
----
-
-## 5. Lancer l'application
-
-```bash
-streamlit run streamlit_app.py
-```
-
-L'application sera accessible à l'adresse suivante :
-
-```
-https://aide-decision-pme-6t3ova3nrf9jwn8wvvfcph.streamlit.app
-```
 
 ---
 
@@ -136,6 +63,10 @@ Le chatbot utilise une base documentaire contenant notamment :
 - Marketing
 - Business Plan
 - Transformation digitale
+
+
+
+
 
 ---
 
@@ -166,5 +97,53 @@ Utilisateur
  Llama 3.3 70B (Groq)
 ```
 
+
+
 ---
 
+# 🛠️ Installation Locale
+
+## 1. Cloner le repository
+
+```bash
+git clone https://github.com/ayaaouimeur/aide-decision-pme.git
+cd aide-decision-pme
+```
+
+## 2. Créer l'environnement virtuel
+
+```bash
+python -m venv rag_env
+```
+
+### Activer l'environnement (Windows)
+
+```bash
+rag_env\Scripts\activate
+```
+
+## 3. Installer les dépendances
+
+```bash
+pip install -r requirements.txt
+```
+
+## 4. Ajouter ta clé Groq
+
+Créer un fichier `.env` :
+
+```env
+GROQ_API_KEY=ta_clé_groq_ici
+```
+
+## 5. Lancer l'application
+
+```bash
+streamlit run streamlit_app.py
+```
+
+L'application sera accessible à l'adresse suivante :
+
+```
+https://aide-decision-pme-6t3ova3nrf9jwn8wvvfcph.streamlit.app
+```
